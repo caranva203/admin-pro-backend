@@ -22,6 +22,9 @@ app.use( express.json() );
 // PASS: OoTLfmtKy5JVG1lg  
 dbConnection();
 
+//Directorio público
+app.use( express.static('public') );
+
 //Rutas  
 app.use( '/api/usuarios', require('./routes/usuarios'));
 app.use( '/api/hospitales', require('./routes/hospitales'));
