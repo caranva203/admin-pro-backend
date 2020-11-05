@@ -3,7 +3,9 @@
 */
 const { Router } = require('express');
 const { check } = require('express-validator');
-const { login, googleSingIn } = require('../controllers/auth');
+
+const { validarJWT } = require('../middelwares/validar-jwt');
+const { login, googleSingIn, renewToken } = require('../controllers/auth');
 const { validarCampos } = require('../middelwares/validar-campos');
 
 
@@ -24,6 +26,12 @@ router.post( '/google',
         validarCampos
     ],
     googleSingIn
+);
+
+// renovar token
+router.get( '/renew',
+    validarJWT,
+    renewToken
 );
 
 
