@@ -19,7 +19,7 @@ app.use( express.json() );
 
 // Base de datos
 // USER: mean_user
-// PASS: OoTLfmtKy5JVG1lg  
+// PASS: UCV6mnZcgq8RO8dZ
 dbConnection();
 
 //Directorio público
